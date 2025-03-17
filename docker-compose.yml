@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  forecast-api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models
+    environment:
+      - ENVIRONMENT=production
+      - MODEL_PATH=/app/models
